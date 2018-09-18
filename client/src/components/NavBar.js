@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { isAuthenticated } from '../fakeAuth';
+import { NavLink, withRouter } from 'react-router-dom';
+import { isAuthenticated, logout } from '../fakeAuth';
 
 const styles = {
   active: {

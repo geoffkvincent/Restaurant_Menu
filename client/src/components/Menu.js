@@ -1,55 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
+import { isAuthenticated } from '../fakeAuth';
+import axios from 'axios';
 
-class Menu extends React.Component{
-state = {menus: []}
 
-componentDidMount() {
-  fetch('/api/menus')
-    .then( res => res.json() )
-    .then( menus => this.setState({ menus }) )
-}
+class Menu extends React.Component {
+  state = { items: [] }
 
-// show() {
-//   const { menu_items } = this.state
-//   return (
-//     <ul>
-//       { menu_items.map( p =>
-//           <li key={m.id}>
-//             <Link to={`/menus/${m.id}`}>
-//               {m.name}
-//             </Link>
-//           </li>
-//         )
-//       }
-//     </ul>
-//   )
-// }
-
-    addItem = (name, description) => {
-      //TODO make api call to rails server to add item
-      //TODO update state
-    }
-  
-    updateTodo = (id) => {
-      //TODO make api call to update todo
-      //TODO update state
-    }
-  
-    deleteTodo = (id) => {
-      //TODO make api call to delete todo
-      //TODO remove it from state
-    }
-
-    render() {
-      const {  } = this.state
-      return (
-        <div>
-          <h2>Menu</h2>
-
-        </div>
-      )
-    }
+  componentDidMount() {
+    axios.get('/api/menus')
+      .then( res => this.setState({ items: res.data }) )
   }
 
-export default Menu
+  render() {
+    const { items }  = this.state;
+    if (isAuthenticated()) {
+      return (
+        <ul>
+          { items.map( i =>
+              <li key={i.id}>
+                <Link to={`/menus/${i.id}`}>{i.name}</Link>
+              </li>
+            )
+          }
+        </ul>
+      )
+    } else {
+      return <Redirect to="/login" />
+    }
+  }
+}
+
+export default Menu;
