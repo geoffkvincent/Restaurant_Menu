@@ -46,17 +46,14 @@ class Menu extends React.Component {
   }
 
   render() {
-    let { items }  = this.state;
-      return (
-        <ul>
-          { items.map( i =>
-              <li key={i.id}>
-                <Link to={`/menus/${i.id}`}>{i.name}</Link>
-              </li>
-            )
-          }
-        </ul>
-      )
+    const { showForm } = this.state;
+    return (
+      <div>
+        <h2>Menu Item</h2>
+        <button onClick={this.toggleForm}>{ showForm ? 'Hide' : 'Show' } form</button>
+        { showForm ? this.form() : this.show() }     
+      </div>
+    )
   }
 }
 
