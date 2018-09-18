@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
+
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import About from './components/About'
@@ -12,6 +13,8 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
+      
+      <Route exact path="/menu" component={Menu} />
       <Route component={NoMatch} />
     </Switch>
   </Fragment>
