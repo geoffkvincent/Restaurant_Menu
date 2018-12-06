@@ -9,4 +9,6 @@ body {
   justify-content: center;
 }
 
-.
+.guy-pic {
+  display: flex;
+}
