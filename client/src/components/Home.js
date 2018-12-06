@@ -1,10 +1,15 @@
 import React from 'react';
 
 const Home = () => (
-  <h1>Guy Ferraris 
-    <br/>
-    Sizzlin Steak House
-  </h1>
+  <div className="guy-home" >
+    <h1>Guy Ferraris 
+      <br/>
+      Sizzlin Steak House
+    </h1>
+    <div className="guy-pic">
+      <img src="https://media1.fdncms.com/orlando/imager/u/blog/6220103/guyfieri.jpg?cb=1503350375"/>
+    </div>
+  </div>
 )
 
 export default Home
