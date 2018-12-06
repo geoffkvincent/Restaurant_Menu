@@ -6,9 +6,19 @@ body {
 
 .guy-home {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  
 }
 
 .guy-pic {
   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
