@@ -1,7 +1,8 @@
 import React from 'react';
+import { Form } from 'semantic-ui-react'
 
 
-class Form extends React.Component {
+class MenuForm extends React.Component {
   defaultValues = { name: '', price: '', description: ''}
   state = {...this.defaultValues}
 
@@ -25,7 +26,7 @@ class Form extends React.Component {
   render() {
     const { name, price, description } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit}>
         <input
           name="name"
           placeholder="Name"
@@ -46,10 +47,10 @@ class Form extends React.Component {
           value={price}
           onChange={this.handleChange}
         />
-        <button>Submit</button>
-      </form>
+        <Form.Button>Submit</Form.Button>
+      </Form>
     )
   }
 }
 
-export default Form;
+export default MenuForm;
