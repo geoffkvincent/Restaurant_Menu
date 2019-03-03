@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './Form'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import {Button} from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
 
 
@@ -51,7 +51,7 @@ class Menu extends React.Component {
     return (
       <div>
         <h2>Menu Item</h2>
-        <button onClick={this.toggleForm}>{ showForm ? 'Hide' : 'Show' } form</button>
+        <Button onClick={this.toggleForm}>{ showForm ? 'Hide' : 'Show' } Add Entree</Button>
         { showForm ? this.form() : this.show() }     
       </div>
     )
