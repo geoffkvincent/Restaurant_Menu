@@ -7,7 +7,6 @@ import About from './components/About';
 import Menu from './components/Menu';
 import MenuItem from './components/MenuItem';
 import NoMatch from './components/NoMatch'
-import ProtectedRoute from './components/ProtectedRoute';
 
 
 const App = () => (
@@ -17,8 +16,8 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/login" component={Login} />
-      <ProtectedRoute path="/menu" component={Menu} />
-      <ProtectedRoute path="/menus/:id" component={MenuItem} />
+      <Route path="/menu" component={Menu} />
+      <Route path="/menus/:id" component={MenuItem} />
       <Route component={NoMatch} />
       
     </Switch>
