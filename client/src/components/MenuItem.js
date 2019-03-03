@@ -39,6 +39,7 @@ class MenuItem extends React.Component {
           <Card.Content extra>
             <Button 
               onClick={this.toggleEdit}
+              size='mini'
             >
               { this.state.edit ? 'Cancel' : 'Edit' }
             </Button>
