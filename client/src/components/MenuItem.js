@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Form from './Form'
+import {Button, Card} from 'semantic-ui-react'
 
 class MenuItem extends React.Component {
   state = { menu_item: {} }
@@ -24,11 +25,15 @@ class MenuItem extends React.Component {
   show() {
     const { menu_item: { name, description, price }} = this.state;
     return (
-      <div>
-        <h1>{name}</h1>
-        <h3>{description}</h3>
-        <h3>{price}</h3>
-      </div>
+      <Card>
+        <Card.Content>
+          <Card.Header>
+            <h1>{name}</h1>
+          </Card.Header>
+          <h3>{description}</h3>
+          <h3>{price}</h3>
+        </Card.Content>
+      </Card>
     )
   }
 
@@ -41,7 +46,7 @@ class MenuItem extends React.Component {
     return (
       <div>
         { edit ? this.edit() : this.show() }
-        <button onClick={this.toggleEdit}>{ edit ? 'Cancel' : 'Edit' }</button>
+        <Button onClick={this.toggleEdit}>{ edit ? 'Cancel' : 'Edit' }</Button>
       </div>
     )
   }
