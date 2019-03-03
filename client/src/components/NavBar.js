@@ -36,7 +36,7 @@ const NavBar = ({ history }) => (
      {' '}
     <NavLink activeStyle={styles.active} to="/about">About</NavLink>
      {' '}
-     <NavLink activeStyle={styles.active} to="/about">Menu</NavLink>
+     <NavLink activeStyle={styles.active} to="/menu">Menu</NavLink>
   </nav>
 )
 
