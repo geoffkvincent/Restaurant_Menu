@@ -25,7 +25,7 @@ class MenuItem extends React.Component {
   show() {
     const { menu_item: { name, description, price }} = this.state;
     return (
-      <Card>
+      <Card centered>
         <Card.Content>
           <Card.Header>
             <h1>{name}</h1>
@@ -36,6 +36,13 @@ class MenuItem extends React.Component {
           <Card.Meta>
             <h3>{price}</h3>
           </Card.Meta>
+          <Card.Content extra>
+            <Button 
+              onClick={this.toggleEdit}
+            >
+              { this.state.edit ? 'Cancel' : 'Edit' }
+            </Button>
+          </Card.Content>
         </Card.Content>
       </Card>
     )
@@ -50,7 +57,6 @@ class MenuItem extends React.Component {
     return (
       <div>
         { edit ? this.edit() : this.show() }
-        <Button onClick={this.toggleEdit}>{ edit ? 'Cancel' : 'Edit' }</Button>
       </div>
     )
   }
