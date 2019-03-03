@@ -30,8 +30,12 @@ class MenuItem extends React.Component {
           <Card.Header>
             <h1>{name}</h1>
           </Card.Header>
-          <h3>{description}</h3>
-          <h3>{price}</h3>
+          <Card.Description>
+            <h3>{description}</h3>
+          </Card.Description>
+          <Card.Meta>
+            <h3>{price}</h3>
+          </Card.Meta>
         </Card.Content>
       </Card>
     )
