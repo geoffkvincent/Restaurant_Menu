@@ -19,7 +19,6 @@ const App = () => (
       <Route path="/menu" component={Menu} />
       <Route path="/menus/:id" component={MenuItem} />
       <Route component={NoMatch} />
-      
     </Switch>
   </Fragment>
 
