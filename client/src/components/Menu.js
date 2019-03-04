@@ -18,14 +18,16 @@ class Menu extends React.Component {
     const { items } = this.state
     return (
       <Table>
-        { items.map( i =>
-            <li key={i.id}>
-              <Link to={`/menus/${i.id}`}>
-                {i.name}
-              </Link>
-            </li>
+        <Table.Body>
+          { items.map( i =>
+          <Table.Row key={i.id}>
+            <Link to={`/menus/${i.id}`}>
+              {i.name}
+            </Link>
+          </Table.Row>
           )
         }
+        </Table.Body>
       </Table>
     )
   }
