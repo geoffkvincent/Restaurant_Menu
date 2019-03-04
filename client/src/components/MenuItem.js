@@ -23,13 +23,15 @@ class MenuItem extends React.Component {
   }
 
   deleteItem = () => {
-    const {id} = this.props.match.params
+    const  { id }  = this.props.match.params
     axios.delete(`/api/menus/${id}`)
+      .then( () => {
+        this.props.history.push('/menu')
+      })
   }
 
   show() {
     const { menu_item: { name, description, price, id }} = this.state;
-    const { deleteItem } = this.props
     return (
       <Container>
         <Card centered>

@@ -15,7 +15,6 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
-      <Route exact path="/login" component={Login} />
       <Route path="/menu" component={Menu} />
       <Route path="/menus/:id" component={MenuItem} />
       <Route component={NoMatch} />
