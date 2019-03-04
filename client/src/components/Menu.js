@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './Form'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Button, Header } from 'semantic-ui-react'
+import { Button, Header, Table } from 'semantic-ui-react'
 
 
 
@@ -17,7 +17,7 @@ class Menu extends React.Component {
   show() {
     const { items } = this.state
     return (
-      <ul>
+      <Table>
         { items.map( i =>
             <li key={i.id}>
               <Link to={`/menus/${i.id}`}>
@@ -26,7 +26,7 @@ class Menu extends React.Component {
             </li>
           )
         }
-      </ul>
+      </Table>
     )
   }
 
