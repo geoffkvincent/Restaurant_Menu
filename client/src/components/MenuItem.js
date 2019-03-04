@@ -44,6 +44,9 @@ class MenuItem extends React.Component {
               >
                 { this.state.edit ? 'Cancel' : 'Edit' }
               </Button>
+              <Icon 
+                name='trash'
+              />
             </Card.Content>
           </Card.Content>
         </Card>
