@@ -42,10 +42,13 @@ class Menu extends React.Component {
   }
 
   submit = (menu) => {
-    debugger
     const { items } = this.state
     axios.post('/api/menus', { menu } )
       .then( res => this.setState({ items: [res.data, ...items ], showForm: false }) )
+  }
+
+  deleteItem = () => {
+
   }
 
   toggleForm = () => {
