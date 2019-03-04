@@ -13,7 +13,7 @@ class Api::MenusController < ApplicationController
     menu = Menu.new(menu_params)
 
     if menu.save
-      render json:menu
+      render json: menu
     else
       render_error(product)
     end
