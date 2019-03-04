@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './Form'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Button, Header, Table } from 'semantic-ui-react'
+import { Button, Header, Table, Container } from 'semantic-ui-react'
 
 
 
@@ -17,7 +17,7 @@ class Menu extends React.Component {
   show() {
     const { items } = this.state
     return (
-      <Table>
+      <Table basic='very' celled collapsing>
         <Table.Body>
           { items.map( i =>
           <Table.Row key={i.id}>
@@ -28,6 +28,7 @@ class Menu extends React.Component {
                 </Link>
               </Header.Content>
             </Table.Cell>
+            <Table.Cell>{i.price}</Table.Cell>
           </Table.Row>
           )
         }
@@ -55,11 +56,11 @@ class Menu extends React.Component {
   render() {
     const { showForm } = this.state;
     return (
-      <div>
-        <Header>Menu</Header>
+      <Container textAlign='centered'>
+        <Header as='h1'>Menu</Header>
         <Button onClick={this.toggleForm}>{ showForm ? 'Hide' : 'Add Entree' } </Button>
         { showForm ? this.form() : this.show() }     
-      </div>
+      </Container>
     )
   }
 }
