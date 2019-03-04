@@ -23,7 +23,7 @@ class Menu extends React.Component {
           <Table.Row key={i.id}>
             <Table.Cell>
               <Header.Content>
-                <Link to={`/menus/${i.id}`}>
+                <Link to={{ pathname: `/menus/${i.id}`, state: {}}}>
                   {i.name}
                 </Link>
               </Header.Content>
