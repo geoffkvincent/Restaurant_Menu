@@ -31,7 +31,7 @@ class MenuItem extends React.Component {
   }
 
   show() {
-    const { menu_item: { name, description, price, id }} = this.state;
+    const { menu_item: { name, description, price, }} = this.state;
     return (
       <Container>
         <Card centered>
