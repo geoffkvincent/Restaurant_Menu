@@ -21,9 +21,13 @@ class Menu extends React.Component {
         <Table.Body>
           { items.map( i =>
           <Table.Row key={i.id}>
-            <Link to={`/menus/${i.id}`}>
-              {i.name}
-            </Link>
+            <Table.Cell>
+              <Header.Content>
+                <Link to={`/menus/${i.id}`}>
+                  {i.name}
+                </Link>
+              </Header.Content>
+            </Table.Cell>
           </Table.Row>
           )
         }
