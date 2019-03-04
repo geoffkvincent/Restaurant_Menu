@@ -58,7 +58,7 @@ class Menu extends React.Component {
     return (
       <Container textAlign='centered'>
         <Header as='h1'>Menu</Header>
-        <Button onClick={this.toggleForm}>{ showForm ? 'Hide' : 'Add Entree' } </Button>
+        <Button size='mini' onClick={this.toggleForm}>{ showForm ? 'Hide' : 'Add Entree' } </Button>
         { showForm ? this.form() : this.show() }     
       </Container>
     )
