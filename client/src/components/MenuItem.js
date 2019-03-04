@@ -22,6 +22,10 @@ class MenuItem extends React.Component {
       .then( res => this.setState({ menu_item: res.data, edit: false }) );
   }
 
+  deleteItem = (id) => {
+
+  }
+
   show() {
     const { menu_item: { name, description, price, id }} = this.state;
     const { deleteItem } = this.props
@@ -46,7 +50,7 @@ class MenuItem extends React.Component {
                 { this.state.edit ? 'Cancel' : 'Edit' }
               </Button>
               <Icon 
-                onClick={() => deleteItem(id)}
+                onClick={() => this.deleteItem(id)}
                 name='trash'
               />
             </Card.Content>
