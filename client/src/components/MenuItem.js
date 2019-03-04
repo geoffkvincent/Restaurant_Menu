@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Form from './Form'
-import {Button, Card, Container} from 'semantic-ui-react'
+import {Button, Card, Container, Icon} from 'semantic-ui-react'
 
 class MenuItem extends React.Component {
   state = { menu_item: {} }
@@ -23,7 +23,8 @@ class MenuItem extends React.Component {
   }
 
   show() {
-    const { menu_item: { name, description, price }} = this.state;
+    const { menu_item: { name, description, price, id }} = this.state;
+    const { deleteItem } = this.props
     return (
       <Container>
         <Card centered>
@@ -45,6 +46,7 @@ class MenuItem extends React.Component {
                 { this.state.edit ? 'Cancel' : 'Edit' }
               </Button>
               <Icon 
+                onClick={() => deleteItem(id)}
                 name='trash'
               />
             </Card.Content>
