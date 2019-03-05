@@ -4,7 +4,7 @@ import Form from './Form'
 import {Button, Card, Container, Icon} from 'semantic-ui-react'
 
 class MenuItem extends React.Component {
-  state = { menu_item: {} }
+  state = { menu_item: {}, editing: false }
 
   componentDidMount() {
     axios.get(`/api/menus/${this.props.match.params.id}`)
@@ -13,7 +13,7 @@ class MenuItem extends React.Component {
 
   toggleEdit = () => {
     this.setState( state => {
-      return { edit: !this.state.edit }
+      return { editing: !this.state.editing }
     });
   }
 

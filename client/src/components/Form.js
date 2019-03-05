@@ -7,6 +7,7 @@ class MenuForm extends React.Component {
   state = {...this.defaultValues}
 
   componentDidMount() {
+    debugger
     if (this.props.id)
       this.setState({...this.props})
   }
