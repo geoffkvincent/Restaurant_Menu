@@ -19,8 +19,9 @@ class MenuItem extends React.Component {
       .then( res => this.setState({ menu_item: res.data, edit: false }) );
   }
 
-  updateItem = () => {
-
+  updateItem = (menu_item) => {
+    const { id } = this.props.match.params
+    axios.put(`/api/menus/${id}`, (menu_item))
   }
 
   deleteItem = () => {
