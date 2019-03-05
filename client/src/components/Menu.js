@@ -47,9 +47,18 @@ class Menu extends React.Component {
       .then( res => this.setState({ items: [res.data, ...items ], showForm: false }) )
   }
 
-  deleteItem = () => {
-
-  }
+  // updateItem = (menu_item) => {
+  //   const { id } = this.props.match.params
+  //   axios.put(`/api/menus/${id}`, (menu_item) )
+  //     .then( ({data}) => {
+  //       const items = this.state.items.map(item => {
+  //         if (item.id === menu_item.id)
+  //           return data
+  //             return item
+  //       })
+  //       this.setState({ items })
+  //     })
+  // }
 
   toggleForm = () => {
     this.setState( state => {

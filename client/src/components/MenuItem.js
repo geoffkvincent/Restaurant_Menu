@@ -11,26 +11,27 @@ class MenuItem extends React.Component {
       .then( res => this.setState({ menu_item: res.data }) )
   }
 
-  toggleEdit = () => this.setState({ editing: !this.state.editing })
+  toggleEdit = () => this.setState({ editing: true })
     
 
-  submit = (menu_item) => {
-    axios.put(`/api/menus/${this.props.match.params.id}`, { menu_item })
-      .then( res => this.setState({ menu_item: res.data, edit: false }) );
+  updateItem = (menu) => {
+    debugger
+    axios.put(`/api/menus/${this.props.match.params.id}`, { menu })
+      .then( res => this.setState({ menu_item: res.data, editing: false }) );
   }
 
-  updateItem = (menu_item) => {
-    const { id } = this.props.match.params
-    axios.put(`/api/menus/${id}`, (menu_item) )
-      .then( ({data}) => {
-        const items = this.state.items.map(item => {
-          if (item.id === menu_item.id)
-            return data
-              return item
-        })
-        this.setState({ items })
-      })
-  }
+  // updateItem = (menu_item) => {
+  //   const { id } = this.props.match.params
+  //   axios.put(`/api/menus/${id}`, (menu_item) )
+  //     .then( ({data}) => {
+  //       const items = this.state.items.map(item => {
+  //         if (item.id === menu_item.id)
+  //           return data
+  //             return item
+  //       })
+  //       this.setState({ items })
+  //     })
+  // }
 
   deleteItem = () => {
     const  { id }  = this.props.match.params
