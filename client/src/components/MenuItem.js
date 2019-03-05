@@ -63,7 +63,7 @@ class MenuItem extends React.Component {
   edit() {
     return (
       <Form 
-        {...this.state.product}
+        {...this.state.menu_item}
         submit={this.submit} 
         id={this.props.match.params.id} 
       />
