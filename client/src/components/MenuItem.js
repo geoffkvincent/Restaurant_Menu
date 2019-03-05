@@ -19,6 +19,10 @@ class MenuItem extends React.Component {
       .then( res => this.setState({ menu_item: res.data, edit: false }) );
   }
 
+  updateItem = () => {
+
+  }
+
   deleteItem = () => {
     const  { id }  = this.props.match.params
     axios.delete(`/api/menus/${id}`)
@@ -64,8 +68,9 @@ class MenuItem extends React.Component {
     return (
       <Form 
         {...this.state.menu_item}
-        submit={this.submit} 
-        id={this.props.match.params.id} 
+        submit = {this.submit} 
+        id = {this.props.match.params.id} 
+        updateItem = {this.updateItem}
       />
     )
   }

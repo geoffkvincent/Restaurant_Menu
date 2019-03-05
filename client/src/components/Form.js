@@ -14,9 +14,12 @@ class MenuForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const item = { ...this.state }
-    if (this.props.id){
+    const { id, updateItem, submit } = this.props
+    if (id) {
+      updateItem(item)
+      this.setState({ ...this.defaultValues })
     } else {
-      this.props.submit(item)
+      submit(item)
       this.setState({ ...this.defaultValues })
     }
   }
