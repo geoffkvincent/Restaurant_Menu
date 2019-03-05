@@ -7,7 +7,6 @@ class MenuForm extends React.Component {
   state = {...this.defaultValues}
 
   componentDidMount() {
-    debugger
     if (this.props.id)
       this.setState({...this.props})
   }
@@ -15,8 +14,11 @@ class MenuForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const item = { ...this.state }
-    this.props.submit(item)
-    this.setState({ ...this.defaultValues })
+    if (this.props.id){
+    } else {
+      this.props.submit(item)
+      this.setState({ ...this.defaultValues })
+    }
   }
 
   handleChange = (e) => {
