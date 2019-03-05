@@ -13,13 +13,29 @@ const styles = {
 const NavBar = ({ history }) => (
   <Menu>
     <Menu.Item>
-      <NavLink exact activeStyle={styles.active} to="/">Home</NavLink>
+      <NavLink 
+        exact 
+        activeStyle={styles.active} 
+        to="/"
+      >
+        Home
+      </NavLink>
     </Menu.Item>
     <Menu.Item>
-      <NavLink activeStyle={styles.active} to="/about">About</NavLink>
+      <NavLink 
+        activeStyle={styles.active} 
+        to="/about"
+      >
+        About
+      </NavLink>
     </Menu.Item>
     <Menu.Item>
-      <NavLink activeStyle={styles.active} to="/menu">Menu</NavLink>
+      <NavLink 
+        activeStyle={styles.active} 
+        to="/menu"
+      >
+        Menu
+      </NavLink>
     </Menu.Item>
   </Menu>
 )
