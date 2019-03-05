@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
+import {Navbar} from 'semantic-ui-react'
 
 const styles = {
   active: {
