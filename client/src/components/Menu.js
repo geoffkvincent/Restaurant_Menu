@@ -26,6 +26,7 @@ class Menu extends React.Component {
                 <Link to={{ pathname: `/menus/${i.id}`, state: {}}}>
                   {i.name}
                 </Link>
+                <Header.Subheader>{i.description}</Header.Subheader>
               </Header.Content>
             </Table.Cell>
             <Table.Cell>{i.price}</Table.Cell>
