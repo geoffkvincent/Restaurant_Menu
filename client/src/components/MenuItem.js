@@ -11,7 +11,7 @@ class MenuItem extends React.Component {
       .then( res => this.setState({ menu_item: res.data }) )
   }
 
-  toggleEdit = () => this.setState({ editing: })
+  toggleEdit = () => this.setState({ editing: !this.state.editing })
     
 
   submit = (menu_item) => {
@@ -65,10 +65,10 @@ class MenuItem extends React.Component {
   }
 
   render() {
-    const { edit } = this.state;
+    const { editing } = this.state;
     return (
       <div>
-        { edit ? this.edit() : this.show() }
+        { editing ? this.edit() : this.show() }
       </div>
     )
   }
