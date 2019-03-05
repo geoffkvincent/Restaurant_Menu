@@ -11,11 +11,8 @@ class MenuItem extends React.Component {
       .then( res => this.setState({ menu_item: res.data }) )
   }
 
-  toggleEdit = () => {
-    this.setState( state => {
-      return { editing: !this.state.editing }
-    });
-  }
+  toggleEdit = () => this.setState({ editing: })
+    
 
   submit = (menu_item) => {
     axios.put(`/api/menus/${this.props.match.params.id}`, { menu_item })
