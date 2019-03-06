@@ -3,7 +3,7 @@ import { Form } from 'semantic-ui-react'
 
 
 class MenuForm extends React.Component {
-  defaultValues = { name: '', price: '', description: ''}
+  defaultValues = { name: '', price: '', description: '', image: '' }
   state = {...this.defaultValues}
 
   componentDidMount() {
@@ -30,7 +30,7 @@ class MenuForm extends React.Component {
   }
 
   render() {
-    const { name, price, description } = this.state;
+    const { name, price, description, image } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
@@ -54,10 +54,9 @@ class MenuForm extends React.Component {
           onChange={this.handleChange}
         />
         <Form.Input
-          name="price"
-          placeholder="Price"
-          type="number"
-          value={price}
+          name="image"
+          placeholder="Image"
+          value={image}
           onChange={this.handleChange}
         />
         <Form.Button>Submit</Form.Button>
