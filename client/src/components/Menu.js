@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './Form'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Button, Header, Table, Container } from 'semantic-ui-react'
+import { Button, Header, Table, Container, Image } from 'semantic-ui-react'
 
 
 
@@ -22,14 +22,17 @@ class Menu extends React.Component {
           { items.map( i =>
           <Table.Row key={i.id}>
             <Table.Cell textAlign='left'>
-              <Header.Content>
-                <Link to={{ pathname: `/menus/${i.id}`, state: {}}}>
-                  {i.name}
-                </Link>
-                <Header.Subheader style={{ color: 'grey'}}>
-                  {i.description}
-                </Header.Subheader>
-              </Header.Content>
+              <Header as='h4' image >
+                <Image src={i.image} rounded size='mini' />
+                <Header.Content>
+                  <Link to={{ pathname: `/menus/${i.id}`, state: {}}}>
+                    {i.name}
+                  </Link>
+                  <Header.Subheader style={{ color: 'grey'}}>
+                    {i.description}
+                  </Header.Subheader>
+                </Header.Content>
+              </Header>
             </Table.Cell>
             <Table.Cell>{i.price}</Table.Cell>
           </Table.Row>
