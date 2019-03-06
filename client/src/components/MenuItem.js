@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Form from './Form'
-import {Button, Card, Container, Icon} from 'semantic-ui-react'
+import {Button, Card, Container, Icon, Image} from 'semantic-ui-react'
 
 class MenuItem extends React.Component {
   state = { menu_item: {}, editing: false }
@@ -15,7 +15,6 @@ class MenuItem extends React.Component {
     
 
   updateItem = (menu) => {
-    debugger
     axios.put(`/api/menus/${this.props.match.params.id}`, { menu })
       .then( res => this.setState({ menu_item: res.data, editing: false }) );
   }
@@ -29,10 +28,11 @@ class MenuItem extends React.Component {
   }
 
   show() {
-    const { menu_item: { name, description, price, }} = this.state;
+    const { menu_item: { name, description, price, image }} = this.state;
     return (
       <Container>
         <Card centered>
+          <Image src={image}/>
           <Card.Content>
             <Card.Header>
               <h1>{name}</h1>
