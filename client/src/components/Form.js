@@ -33,20 +33,27 @@ class MenuForm extends React.Component {
     const { name, price, description } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
-        <input
+        <Form.Input
           name="name"
           placeholder="Name"
           value={name}
           onChange={this.handleChange}
           required
         />
-        <input
+        <Form.Input
           name="description"
           placeholder="Description"
           value={description}
           onChange={this.handleChange}
         />
-        <input
+        <Form.Input
+          name="price"
+          placeholder="Price"
+          type="number"
+          value={price}
+          onChange={this.handleChange}
+        />
+        <Form.Input
           name="price"
           placeholder="Price"
           type="number"
