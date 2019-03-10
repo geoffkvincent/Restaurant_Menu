@@ -5,9 +5,9 @@ const About = () => (
   <Container>
     <Header as='h1'>
       Open 24 hrs a day
+      <br/>
+      7 days a week
     </Header>
-    <br/>
-     7 days a week
   </Container>
 
 )
