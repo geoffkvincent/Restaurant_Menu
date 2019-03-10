@@ -4,12 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-.guy-home {
-  display: flex;
-  flex-wrap: wrap;
-  
-}
-
 .guy-pic {
   display: flex;
   justify-content: space-around;
