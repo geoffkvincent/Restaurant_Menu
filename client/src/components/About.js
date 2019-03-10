@@ -1,12 +1,14 @@
 import React from 'react';
-import {Header} from 'semantic-ui-react'
+import {Header, Container} from 'semantic-ui-react'
 
 const About = () => (
-  <h1>
-    Open 24 hrs a day
+  <Container>
+    <Header>
+      Open 24 hrs a day
+    </Header>
     <br/>
      7 days a week
-  </h1>
+  </Container>
 
 )
 
