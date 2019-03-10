@@ -3,7 +3,7 @@ import {Header, Container} from 'semantic-ui-react'
 
 const About = () => (
   <Container>
-    <Header>
+    <Header as='h1'>
       Open 24 hrs a day
     </Header>
     <br/>
